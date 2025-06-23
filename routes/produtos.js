@@ -11,8 +11,13 @@ router.get('/', (req, res, next) => {
 
 //INSERE UM PRODUTO
 router.post('/', (req, res, next) => {
+    const produto = { //OBJETO PRODUTO COM PROPRIEDADES DE NOME E PREÇO NO FORMATO JSON
+        nome: req.body.nome,
+        preco: req.body.preco
+    }
     res.status(201).send({
-        mensagem: 'Inserindo um produto'
+        mensagem: 'Inserindo um produto',
+        produtoCriado: produto
     });
 });
 
